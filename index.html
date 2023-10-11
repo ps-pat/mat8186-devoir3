@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Patrick Fournier" />
+  <title>Devoir 3</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Devoir 3</h1>
+<p class="author">Patrick Fournier</p>
+</header>
+<p>L’objectif de ce devoir est la création d’un package R. Celui-ci
+devra respecter les exigences suivantes:</p>
+<ul>
+<li><p>Chacune des fonctions doit être documentée. La documentation doit
+comprendre les items suivants:</p>
+<dl>
+<dt><strong>Titre:</strong></dt>
+<dd>
+<p>Description en une ligne de la fonction;</p>
+</dd>
+<dt><strong>Description:</strong></dt>
+<dd>
+<p>Description plus détaillée de la fonction;</p>
+</dd>
+<dt><strong>Paramètres:</strong></dt>
+<dd>
+<p>Description de chacun des arguments acceptés par la fonction;</p>
+</dd>
+<dt><strong>Retour:</strong></dt>
+<dd>
+<p>Description de ce qui est retourné par la fonction;</p>
+</dd>
+<dt><strong>Exemple:</strong></dt>
+<dd>
+<p>Au moins un exemple d’utilisation de la fonction;</p>
+</dd>
+</dl></li>
+<li><p>Le package lui-même doit être documenté;</p></li>
+<li><p>Votre package doit être mis en ligne sur GitHub de manière à
+pouvoir être installé à l’aide de la fonction
+<code>devtools::install_github</code> (voir <a
+href="https://github.com/cours-patrickFournier/exemple-package">exemple</a>).
+N’oubliez pas de rendre votre dépôt privé et de m’inviter comme
+collaborateur!</p></li>
+<li><p>Notez que chacune des fonctions disponibles doit être
+fonctionnelle;</p></li>
+<li><p>Chaque méthode doit correspondre à une fonction générique qu’il
+vous faudra définir au besoin;</p></li>
+<li><p>Vous pouvez définir des fonctions autres que celles demandées
+pour faciliter votre travail. Toutefois, ces fonctions ne doivent pas
+être exposées à l’utilisateur;</p></li>
+<li><p>Votre package sera testé à l’aide de la commande
+<code>R CMD check</code>. Des pénalités seront attribuées pour chaque
+“erreur” et chaque “avertissement” (“warning”). Assurez-vous donc de
+passer chacun des checks avant la date limite;</p></li>
+</ul>
+<p>L’objectif de votre package est d’implémenter la classe
+<code>delta_coverage</code> permettant d’évaluer empiriquement les
+probabilités de couverture d’un intervalle de confiance asymptotique.
+Bien entendu, afin que votre classe soit utile, il sera nécessaire de
+définir des méthodes et des fonctions génériques. De plus, afin de la
+rendre facile à utiliser, vous devrez implémenter un constructeur et
+documenter l’ensemble des objets exportés.</p>
+<p><span class="math display">\large \prec \sim \sim \sim
+\succ</span></p>
+<p>Soit <span class="math inline">X</span> une variable aléatoire et
+<span class="math inline">g</span> une fonction dérivable deux fois. Le
+développement de Taylor de <span class="math inline">g</span> autour de
+<span class="math inline">\mu = \mathop{\mathrm{E}}[X]</span> donne
+l’approximation <span class="math display">g(X) \approx g(\mu) + (X -
+\mu) g&#39;(\mu) + \frac 1 2 (X - \mu)^2 g&#39;&#39;(\mu)\,.</span> On
+peut donc approximer les deux premiers moments de <span
+class="math inline">g(X)</span> par <span
+class="math display">\mathop{\mathrm{E}}[g(X)] \approx g(\mu) +
+\frac{\sigma^2}{2} g&#39;&#39;(\mu) \quad \text{et} \quad
+  \mathop{\mathrm{V}}[g(X)] \approx \sigma^2 (g&#39;(\mu))^2</span> où
+<span class="math inline">\sigma^2 = \mathop{\mathrm{V}}[X]</span>.
+Remarquez que le terme d’ordre 2 n’est utilisé que dans l’approximation
+de <span class="math inline">\mathop{\mathrm{E}}[g(X)]</span> par souci
+de simplicité. Soit <span class="math inline">\{ X_k \}</span> une suite
+de variables aléatoires telle que <span class="math display">\bar X_n
+\to \mathcal N \left(\mu, \frac{\sigma^2}{n} \right)</span> où <span
+class="math inline">\bar X_n = \frac 1 n \sum_{k = 1}^n</span>. Sous
+certaines conditions (que vous pouvez supposer respectées), on peut
+montrer que <span class="math display">g(\bar X_n) - \frac{\sigma^2}{2}
+g&#39;&#39;(\bar X_n) \to
+  \mathcal N \left( g(\mu), \frac{S_n^2}{n} \left( g&#39;(\bar X_n)
+\right)^2 \right)</span> où <span class="math inline">S_n^2 = \frac{1}{n
+- 1} \sum_{k = 1}^n (X_k - \bar X_n)^2</span>. Il s’agit de la fameuse
+méthode delta. Votre classe devra permettre d’évaluer les probabilités
+de couverture d’intervalles de confiances construits à l’aide de ce
+résultat.</p>
+<h1 class="unnumbered" id="exercice-1">Exercice 1</h1>
+<p>Définissez un constructeur pour la classe
+<code>delta_coverage</code>. Celui-ci devra construire un objet
+possédant les “fields” suivants:</p>
+<ul>
+<li><p>une fonction d’un seul argument permettant d’obtenir un
+échantillon iid d’une variable aléatoire, la taille de l’échantillon
+étant déterminée par l’argument (correspond à <span
+class="math inline">\{ X_k \}</span>);</p></li>
+<li><p>l’espérance de chaque <span class="math inline">X_k</span>
+(correspond à <span class="math inline">\mu</span>);</p></li>
+<li><p>Une fonction quelconque (correspond à <span
+class="math inline">g</span>);</p></li>
+<li><p>Un nombre réel compris entre 0 et 1 (correspond au niveau de
+l’intervalle de confiance);</p></li>
+<li><p>Un vecteur de booléens.</p></li>
+</ul>
+<p>Chacun des quatre premiers fields doivent correspondre à un argument
+du constructeur. Le dernier servira éventuellement à stocker les
+résultats d’une étude de simulation.</p>
+<h1 class="unnumbered" id="exercice-2">Exercice 2</h1>
+<p>Implémentez les méthodes <code>ehat(d, xs)</code> et
+<code>vhat(d, xs)</code> où <code>d</code> est un objet de classe
+<code>delta_coverage</code> et <code>xs</code> un échantillon. Ces
+méthodes doivent retourner respectivement l’espérance et la variance de
+<span class="math inline">g(X)</span> estimée à partir de
+<code>xs</code>. Indice: <code>? deriv</code>.</p>
+<h1 class="unnumbered" id="exercice-3">Exercice 3</h1>
+<p>Implémentez la méthode <code>ic(d, xs)</code> retournant un
+intervalle de confiance de niveau <span class="math inline">1 -
+\alpha</span> pour <span class="math inline">g(\mu)</span>. L’intervalle
+est construit en utilisant la méthode delta. Inspirez-vous de la valeur
+retournée par la fonction <code>confint</code> pour la valeur retournée
+par votre méthode (i.e. vecteur nommé).</p>
+<h1 class="unnumbered" id="exercice-4">Exercice 4</h1>
+<p>Implémentez la méthode <code>rand(d, n)</code> où <code>n</code> est
+un entier positif. Cette méthode doit simplement fournir un échantillon
+de taille <span class="math inline">n</span> provenant de la fonction
+stockée dans <code>d</code>.</p>
+<h1 class="unnumbered" id="exercice-5">Exercice 5</h1>
+<p>Implémetez la méthode <code>pcoverage(d, n = 100, M = 10000)</code>
+estimant la probabilité de couverture de l’intervalle de confiance
+construit à l’aide de la méthode delta. Pour ce faire, votre méthode
+doit tirer <span class="math inline">M</span> échantillon de taille
+<span class="math inline">n</span>. Un intervalle est construit pour
+chaque échantillon. <code>TRUE</code> est stocké dans l’entrée
+appropriée du vecteur de résultats de <code>d</code> si l’intervalle
+recouvre <span class="math inline">g(\mu)</span>, <code>FALSE</code>
+sinon.</p>
+<p>Votre méthode doit permettre à l’utilisateur de réaliser une étude de
+manière concurrente en utilisant MPI!</p>
+<h1 class="unnumbered" id="exercice-6">Exercice 6</h1>
+<p>Définissez la méthode <code>print</code> pour votre classe de manière
+à afficher la probabilité de couverture estimée si disponible, i.e. si
+<code>pcoverage</code> a été appellée auparavant. Sinon, laissez aller
+votre créativité!</p>
+</body>
+</html>
